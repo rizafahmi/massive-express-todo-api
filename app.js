@@ -4,9 +4,9 @@ const favicon = require('serve-favicon')
 const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
+require('dotenv').config()
 
 const index = require('./routes/index')
-const users = require('./routes/users')
 
 const app = express()
 const massive = require('massive')
@@ -17,7 +17,7 @@ app.set('view engine', 'pug')
 
 // DB
 app.set('db', massive.connectSync({
-  connectSync: process.env.DATABASE_URL
+  connectionString: process.env.DATABASE_URL
 }))
 
 // uncomment after placing your favicon in /public
@@ -29,7 +29,6 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', index)
-app.use('/users', users)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

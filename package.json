@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "migrate": "db-migrate"
+    "migrate": "db-migrate",
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
