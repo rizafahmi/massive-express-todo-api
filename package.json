@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "migrate": "db-migrate"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
@@ -15,5 +16,9 @@
     "morgan": "~1.7.0",
     "pug": "~2.0.0-beta10",
     "serve-favicon": "~2.3.2"
+  },
+  "devDependencies": {
+    "db-migrate": "^0.10.0-beta.20",
+    "db-migrate-pg": "^0.1.11"
   }
 }
